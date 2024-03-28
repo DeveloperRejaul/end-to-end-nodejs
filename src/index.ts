@@ -1,5 +1,4 @@
-import main from './app';
+async function main () {}
 
-(async function(){
-  await main();
-})();
+
+(async()=> {await main();})();
