@@ -8,7 +8,9 @@
     "tsc-w": "tsc -w",
     "start": "node dist/index.js",
     "build": "esbuild --bundle src/index.ts --outdir=dist --platform=node --target=ESNext --minify",
-    "dev": "env-cmd -f .env nodemon --watch src src/index.ts"
+    "dev": "env-cmd -f .env nodemon --watch src src/index.ts",
+    "pm2-start":"pm2 start src/index.ts -i max",
+    "pm2-stop":"pm2 stop all"
   },
   "dependencies": {
     "dotenv": "^16.4.4",
