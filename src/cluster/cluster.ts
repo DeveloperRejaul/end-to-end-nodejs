@@ -3,9 +3,7 @@ import cluster from 'node:cluster';
 import OS from 'node:os';
 
 
-
-
-export default async function NodeCluster () {
+async function nodeCluster () {
   if(cluster.isMaster){
     console.log(`muster process ${process.pid} is already running`);
     const totalCore = OS.cpus().length;
@@ -33,3 +31,4 @@ export default async function NodeCluster () {
     server.listen(4000, ()=> console.log('server is running on prot 4000'));
   }
 }
+nodeCluster();

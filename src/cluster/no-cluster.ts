@@ -1,6 +1,6 @@
 import http from 'node:http';
 
-export default async function NoCluster () {
+async function noCluster () {
  
   // creating a simple server
   const server = http.createServer((req,res)=> {
@@ -18,3 +18,5 @@ export default async function NoCluster () {
 
   server.listen(4000, ()=> console.log('server is running on prot 4000'));
 }
+
+noCluster();
