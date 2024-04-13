@@ -41,7 +41,6 @@ yarn or npm install
 ```
 yarn compile
 node .\dist\character-encoding\app.js
-
 ```
 
 
