@@ -78,7 +78,7 @@ yarn compile
 node .\dist\cluster\no-cluster.js // running server without cluster in single node instance mode
 npx loadtest -n 1000 -c 100 http://localhost:3000 // see output how many times
 
-node .\dist\cluster\cluster.js // running server with cluster in malty node instance mode
+node .\dist\cluster\cluster.js // running server with cluster in multiple node instance mode
 npx loadtest -n 1000 -c 100 http://localhost:3000 // see output how many times
 
 ```
