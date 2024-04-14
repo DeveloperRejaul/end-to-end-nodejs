@@ -1,22 +1,12 @@
-import http from 'node:http';
+import express from 'express';
+const app = express();
 
-async function noCluster () {
- 
-  // creating a simple server
-  const server = http.createServer((req,res)=> {
-    if(req.url === '/'){
-      console.log('root route hit');
-      res.writeHead(200, {'Content-Type':'text/plain'});
-      res.end('Home Page');
-    }else if(req.url === '/slow-page') {
-      console.log('slow route hit');
-      for (let index = 0; index < 6000000000; index++) { } // cpu incentive task 
-      res.writeHead(200, {'Content-Type':'text/plain'});
-      res.end('Slow Page');
-    }
-  });
+app.get('/', (req, res) => {
+  for(let i =0 ; i <= 1e8; i++ ){
+    // do something here
+  }
+  res.send(`process id: ${process.pid} . ok...`);
+});
 
-  server.listen(4000, ()=> console.log('server is running on prot 4000'));
-}
 
-noCluster();
+app.listen(3000, ()=> console.log(`app listening on ${3000} post , process id is ${process.pid}`));

@@ -1,34 +1,35 @@
-import http from 'node:http';
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import express from 'express';
+import os from 'node:os';
 import cluster from 'node:cluster';
-import OS from 'node:os';
 
+const app = express();
+const numCpus = os.cpus().length;
 
-async function nodeCluster () {
-  if(cluster.isMaster){
-    console.log(`muster process ${process.pid} is already running`);
-    const totalCore = OS.cpus().length;
-    for (let index = 0; index < totalCore; index++) {
-      cluster.fork(); 
-    }
-  }else {
-    console.log(`Worker ${process.pid} is already running`);
-    // creating a simple server
-    const server = http.createServer((req,res)=> {
-      if(req.url === '/'){
-        console.log('root route hit');
-        res.writeHead(200, {'Content-Type':'text/plain'});
-        res.end('Home Page');
-      }else if(req.url === '/slow-page') {
-        console.log('slow route hit');
-        for (let index = 0; index < 6000000000; index++) {
-          
-        } // cpu incentive task 
-        res.writeHead(200, {'Content-Type':'text/plain'});
-        res.end('Slow Page');
-      }
-    });
-
-    server.listen(4000, ()=> console.log('server is running on prot 4000'));
+app.get('/', (req, res) => {
+  for(let i =0 ; i <= 1e8; i++ ){
+    // do something here
   }
+  res.send(`process id: ${process.pid} . ok...`);
+
+  // kill current running worker process
+  // cluster.worker?.kill();
+});
+
+
+if(cluster.isMaster) {
+  for(let i = 0 ; i < numCpus ; i++) {
+    cluster.fork();
+  }
+
+  // leasing cluster worker is kill 
+  cluster.on('exit', (worker, code , signal) => {
+    console.log(`Worker id: ${worker.process.pid} died`);
+    
+    // create new worker process instance
+    cluster.fork();
+  });
+}else {
+  app.listen(3000, ()=> console.log(`app listening on ${3000} post , process id is ${process.pid}`));
 }
-nodeCluster();
+
