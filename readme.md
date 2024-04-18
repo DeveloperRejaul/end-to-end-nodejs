@@ -2,10 +2,10 @@
 Welcome to the "end-to-end-nodejs" repository! This repository contains a collection of Node.js projects implementing various services. Each project focuses on different aspects of Node.js development, providing a comprehensive understanding of building end-to-end applications.
 
 ## Projects
-1. [Character Cli Encoding Project](#character-cli-encoding-project)
+1. [Character Encoding Cli Project](#character-encoding-cli-project)
 2. [Load Balancing Project](#load-balancing-project)
 
-## Character Cli Encoding Project
+## Character Encoding Cli Project
 
 ### Introduction
 This project aims to develop a character encoding tool using Node.js and TypeScript that provides functionality for converting text to binary and binary to text. Character encoding is essential for ensuring the correct representation of text across different systems, languages, and platforms.
