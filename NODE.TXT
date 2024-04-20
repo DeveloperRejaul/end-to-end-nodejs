@@ -1,0 +1,4 @@
+// find how many core in laptop
+commend prompt - WINDOWS : echo %NUMBER_OF_PROCESSORS%
+commend prompt - LINUX : nproc
+commend prompt - MAC : sysctl -n hw.ncpu
