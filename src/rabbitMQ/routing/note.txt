@@ -1,0 +1,4 @@
+Direct Exchange: In a direct exchange, messages are routed to queues based on
+a routing key specified by the publisher. Queues are bound to the exchange with a
+binding key, and messages are delivered to queues whose binding key matches the routing key
+of the message. Direct exchanges provide a one-to-one mapping between routing keys and queues.

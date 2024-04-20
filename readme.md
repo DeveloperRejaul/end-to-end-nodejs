@@ -5,7 +5,8 @@ Welcome to the "end-to-end-nodejs" repository! This repository contains a collec
 1. [Character Encoding Cli Project](#character-encoding-cli-project)
 2. [Load Balancing Project](#load-balancing-project)
 3. [Malty Threading Project](#malty-threading-project)
-3. [Ticket Management Project](#ticket-management-project)
+4. [Ticket Management Project](#ticket-management-project)
+5. [Rabbitmq Microservices Project](#rabbitmq-microservices-project)
 
 ## Character Encoding Cli Project
 
@@ -89,3 +90,6 @@ npx loadtest -n 1000 -c 100 http://localhost:3000 // see output how many times
 
 
 ## Ticket Management Project
+
+
+## Rabbitmq Microservices Project
