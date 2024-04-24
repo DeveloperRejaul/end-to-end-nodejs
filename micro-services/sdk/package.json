@@ -1,12 +1,14 @@
 {
   "name": "sdk",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "this is template repo for nodejs typescript",
-  "main": "dist/index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "compile": "tsc",
     "build": "esbuild --bundle src/index.ts --outdir=dist --platform=node --target=es2020 --minify",
+    "build:esm": "tsc --outdir dist/esm",
+    "build:cjs": "tsc --module CommonJS --outdir dist/cjs",
     "start": "node dist/index.js",
     "dev": "env-cmd -f .env nodemon --watch src src/index.ts",
     "local-publish": "npm link"
@@ -25,5 +27,7 @@
   "repository": "https://github.com/DeveloperRejaul/nodejs-typescript.git",
   "author": "Rezaul karim",
   "license": "ISC",
-  "private": true
+  "files": [
+    "dist"
+  ]
 }
