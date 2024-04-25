@@ -1,0 +1,36 @@
+<!-- Test WebSocket -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebSocket Client</title>
+</head>
+<body>
+  <input type="text" id="messageInput" placeholder="Enter message">
+  <button onclick="sendMessage()">Send</button>
+
+  <ul id="messagesList"></ul>
+
+  <script>
+    const ws = new WebSocket('ws://localhost:8080');
+
+    // Handle messages from the server
+    ws.onmessage = function(event) {
+      const messagesList = document.getElementById('messagesList');
+      const messageItem = document.createElement('li');
+      messageItem.textContent = 'Received: ' + event.data;
+      messagesList.appendChild(messageItem);
+    };
+
+    // Function to send message to the server
+    function sendMessage() {
+      const messageInput = document.getElementById('messageInput');
+      const message = messageInput.value;
+      ws.send(message);
+      messageInput.value = ''; // Clear input field after sending
+    }
+  </script>
+</body>
+</html>
