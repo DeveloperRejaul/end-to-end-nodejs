@@ -4,7 +4,7 @@ Welcome to the "end-to-end-nodejs" repository! This repository contains a collec
 ## Projects
 | #SL | Name | Code| Demo |
 |----|------|-----|------|
-|01|[Character Encoding Cli Project (Vanilla JS)](#character-encoding-cli-project)| [Link](https://github.com/DeveloperRejaul/end-to-end-nodejs/tree/main/src/character-encoding)| [Link](https://google.com)|
+|01|[Character Encoding Cli Project (Vanilla JS)](#character-encoding-cli-project)| [Link](https://github.com/DeveloperRejaul/end-to-end-nodejs/tree/main/src/character-encoding)| [Link](https://youtu.be/XCwnPwLtazk)|
 |02|[Load Balancing Project (Node cluster)](#load-balancing-project)| [Link](https://github.com/DeveloperRejaul/end-to-end-nodejs/tree/main/src/cluster)| [Link](https://google.com)|
 |03|[Malty Threading Project (Node Worker Thread)](#malty-threading-project)| [Link](https://github.com/DeveloperRejaul/end-to-end-nodejs/tree/main/src/workerThread)| [Link](https://google.com)|
 |04|[Ticket Management Project (Node Event)](#ticket-management-project)| [Link](https://github.com/DeveloperRejaul/end-to-end-nodejs/tree/main/src/event)| [Link](https://google.com)|
