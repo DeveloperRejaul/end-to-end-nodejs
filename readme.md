@@ -9,6 +9,7 @@ Welcome to the "end-to-end-nodejs" repository! This repository contains a collec
 |03|[Malty Threading Project (Node Worker Thread)](#malty-threading-project)| [Link](https://github.com/DeveloperRejaul/end-to-end-nodejs/tree/main/src/workerThread)| [Link](https://google.com)|
 |04|[Ticket Management Project (Node Event)](#ticket-management-project)| [Link](https://github.com/DeveloperRejaul/end-to-end-nodejs/tree/main/src/event)| [Link](https://google.com)|
 |05|[Rabbitmq Microservices Project (amqplib)](#rabbitmq-microservices-project)| [Link](https://github.com/DeveloperRejaul/end-to-end-nodejs/tree/main/src/rabbitMQ)| [Link](https://google.com)|
+|06|[Microservice SDK for API Communication](#microservice-sdk-for-api-communication)| [Link](https://github.com/DeveloperRejaul/end-to-end-nodejs/tree/main/micro-services/sdk)| [Link](https://google.com)|
 
 
 
@@ -214,4 +215,46 @@ yarn or npm install
 ```
 yarn compile
 cd .\dist\rabbitMQ\
+```
+
+
+### Microservice SDK for API Communication
+### Introduction
+This project aims to simplify communication with microservices by providing a software development kit (SDK) that wraps around the microservices' APIs. It enables developers to interact with the microservices without dealing with the intricacies of API requests directly.<br/>
+The SDK abstracts away the complexities of making HTTP requests to the microservices' APIs. It provides a simple and intuitive interface for developers to interact with the microservices, allowing them to focus on building features rather than handling API communication boilerplate.
+
+### Features
+- Encapsulates API requests within easy-to-use SDK functions.
+- Handles authentication and authorization transparently.
+- Provides error handling and response validation mechanisms.
+- Offers customizable options for advanced use cases.
+
+
+### Getting Started
+Follow these instructions to get started with the project:
+
+#### Prerequisites
+- Node.js installed on your system.
+
+#### Installation
+1. Clone this repository to your local machine
+2. Move the project directory 
+4. Install all the dependencies
+```
+git clone https://github.com/DeveloperRejaul/end-to-end-nodejs.git
+
+cd end-to-end-nodejs/micro-services/sdk
+
+yarn or npm install
+```
+
+#### Usage
+1. Compile typescript code: (`yarn build`);
+2. Run the script with the desired options:
+
+```
+yarn compile
+// if you install in your local machine run : npm link  and install this module in project run: npm link sdk
+
+// if you publish npm : npm run publish
 ```
