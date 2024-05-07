@@ -10,8 +10,9 @@ Welcome to the "end-to-end-nodejs" repository! This repository contains a collec
 |04|[Ticket Management Project (Node Event)](#ticket-management-project)| [Link](https://google.com)| [Link](https://google.com)|
 |05|[Rabbitmq Microservices Project (amqplib)](#rabbitmq-microservices-project)| [Link](https://google.com)| [Link](https://google.com)|
 
-## Character Encoding Cli Project
 
+
+## Character Encoding Cli Project
 ### Introduction
 This project aims to develop a character encoding tool using Node.js and TypeScript that provides functionality for converting text to binary and binary to text. Character encoding is essential for ensuring the correct representation of text across different systems, languages, and platforms.
 
@@ -47,6 +48,7 @@ yarn or npm install
 yarn compile
 node .\dist\character-encoding\app.js
 ```
+
 
 ## Load Balancing Project
 ### Introduction
@@ -88,10 +90,128 @@ npx loadtest -n 1000 -c 100 http://localhost:3000 // see output how many times
 
 ```
 
+
 ## Malty Threading Project
+### Introduction
+The Malty Threading Project is a Node.js project that harnesses the power of the Worker Threads module for efficient multi-threading. This project aims to demonstrate the benefits of leveraging Node.js's built-in multi-threading capabilities for improving performance in CPU-intensive tasks.
+
+### Features
+- Worker Threads: Utilizes Node.js Worker Threads module to create and manage multiple threads for parallel processing.
+- Efficient Task Execution: Demonstrates how to divide tasks into smaller units and distribute them - across worker threads for improved performance.
+- Example Applications: Provides example applications to showcase different use cases where multi-threading can be beneficial.
+- Scalability: Designed to handle large-scale tasks by efficiently utilizing system resources through multi-threading.
+
+### Getting Started
+Follow these instructions to get started with the project:
+
+#### Prerequisites
+- Node.js installed on your system.
+
+#### Installation
+1. Clone this repository to your local machine
+2. Move the project directory 
+4. Install all the dependencies
+```
+git clone https://github.com/DeveloperRejaul/end-to-end-nodejs.git
+
+cd end-to-end-nodejs 
+
+yarn or npm install
+```
+
+#### Usage
+1. Compile typescript code: (`yarn build`);
+2. Run the script with the desired options:
+3. Hit api and test:
+
+```
+yarn compile
+node .\dist\workerThread\main.js
+Api base url: http://localhost:4000/
+
+//heavy task with out worker thread
+http://localhost:4000/heavy/ 
+
+//heavy task with worker thread
+http://localhost:4000/heavy2/ 
+
+//heavy task with malty dynamic worker thread
+http://localhost:4000/heavy3/ 
+```
 
 
 ## Ticket Management Project
+### Introduction
+The Ticket Management Project is a Node.js application designed to demonstrate event-driven architecture using the built-in Event module. This project serves as a practical example of how to implement event-driven patterns to manage ticketing systems efficiently.
 
+### Features
+- Event-Driven Architecture: Utilizes Node.js Event module to implement event-driven communication between components.
+- Ticket Creation and Management: Provides functionality to create, update, and delete tickets.
+- Event Handling: Demonstrates how to define and handle custom events for various ticket-related actions.
+- Scalability: Designed to handle a large number of concurrent events and tickets efficiently.
+
+### Getting Started
+Follow these instructions to get started with the project:
+
+#### Prerequisites
+- Node.js installed on your system.
+
+#### Installation
+1. Clone this repository to your local machine
+2. Move the project directory 
+4. Install all the dependencies
+```
+git clone https://github.com/DeveloperRejaul/end-to-end-nodejs.git
+
+cd end-to-end-nodejs 
+
+yarn or npm install
+```
+
+#### Usage
+1. Compile typescript code: (`yarn build`);
+2. Run the script with the desired options:
+
+```
+yarn compile
+node .\dist\event\main.js
+```
 
 ## Rabbitmq Microservices Project
+### Introduction
+This project is a demonstration of various messaging patterns using RabbitMQ and Node.js with amqplib. It includes implementations for:
+
+### Features
+- Producer-Consumer
+- Publish-Subscribe
+- Routing
+- RPC (Remote Procedure Call)
+- Topic-based messaging
+
+### Getting Started
+Follow these instructions to get started with the project:
+
+#### Prerequisites
+- Node.js installed on your system.
+
+#### Installation
+1. Clone this repository to your local machine
+2. Move the project directory 
+4. Install all the dependencies
+```
+git clone https://github.com/DeveloperRejaul/end-to-end-nodejs.git
+
+cd end-to-end-nodejs 
+
+yarn or npm install
+```
+
+#### Usage
+1. Compile typescript code: (`yarn build`);
+2. Run the script with the desired options:
+3. run all file and test
+
+```
+yarn compile
+cd .\dist\rabbitMQ\
+```
