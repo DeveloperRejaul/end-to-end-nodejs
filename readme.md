@@ -2,11 +2,13 @@
 Welcome to the "end-to-end-nodejs" repository! This repository contains a collection of Node.js projects implementing various services. Each project focuses on different aspects of Node.js development, providing a comprehensive understanding of building end-to-end applications.
 
 ## Projects
-1. [Character Encoding Cli Project](#character-encoding-cli-project)
-2. [Load Balancing Project](#load-balancing-project)
-3. [Malty Threading Project](#malty-threading-project)
-4. [Ticket Management Project](#ticket-management-project)
-5. [Rabbitmq Microservices Project](#rabbitmq-microservices-project)
+| #SL | Name | Code| Demo |
+|----|------|-----|------|
+|01|[Character Encoding Cli Project (Vanilla JS)](#character-encoding-cli-project)| [Link](https://google.com)| [Link](https://google.com)|
+|02|[Load Balancing Project (Node cluster)](#load-balancing-project)| [Link](https://google.com)| [Link](https://google.com)|
+|03|[Malty Threading Project (Node Worker Thread)](#malty-threading-project)| [Link](https://google.com)| [Link](https://google.com)|
+|04|[Ticket Management Project (Node Event)](#ticket-management-project)| [Link](https://google.com)| [Link](https://google.com)|
+|05|[Rabbitmq Microservices Project (amqplib)](#rabbitmq-microservices-project)| [Link](https://google.com)| [Link](https://google.com)|
 
 ## Character Encoding Cli Project
 
