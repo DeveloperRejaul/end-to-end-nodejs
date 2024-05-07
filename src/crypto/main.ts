@@ -21,7 +21,7 @@ const signature = sign.sign(privateKey, 'hex');
 console.log(signature);
 
 
-const verify =crypto.createVerify('SHA256');
+const verify = crypto.createVerify('SHA256');
 verify.write('some data to sign');
 verify.end();
 const verified = verify.verify(publicKey, signature, 'hex')

@@ -10,6 +10,7 @@ Welcome to the "end-to-end-nodejs" repository! This repository contains a collec
 |04|[Ticket Management Project (Node Event)](#ticket-management-project)| [Link](https://github.com/DeveloperRejaul/end-to-end-nodejs/tree/main/src/event)| [Link](https://google.com)|
 |05|[Rabbitmq Microservices Project (amqplib)](#rabbitmq-microservices-project)| [Link](https://github.com/DeveloperRejaul/end-to-end-nodejs/tree/main/src/rabbitMQ)| [Link](https://google.com)|
 |06|[Microservice SDK for API Communication](#microservice-sdk-for-api-communication)| [Link](https://github.com/DeveloperRejaul/end-to-end-nodejs/tree/main/micro-services/sdk)| [Link](https://google.com)|
+|07|[Crypto Module Project](#crypto-module-project)| [Link](https://github.com/DeveloperRejaul/end-to-end-nodejs/tree/main/micro-services/sdk)| [Link](https://google.com)|
 
 
 
@@ -257,4 +258,42 @@ yarn compile
 // if you install in your local machine run : npm link  and install this module in project run: npm link sdk
 
 // if you publish npm : npm run publish
+```
+
+
+### Crypto Module Project
+### Introduction
+This project utilizes the Node.js Crypto module to perform various cryptographic operations such as hashing, signing, verification, encryption, and decryption. It provides a set of functions to perform these operations securely.
+
+### Features
+- General hashing for generating message digests.
+- Signing and verification of data to ensure integrity and authenticity.
+- Encryption and decryption for securing sensitive information.
+
+
+### Getting Started
+Follow these instructions to get started with the project:
+
+#### Prerequisites
+- Node.js installed on your system.
+
+#### Installation
+1. Clone this repository to your local machine
+2. Move the project directory 
+4. Install all the dependencies
+```
+git clone https://github.com/DeveloperRejaul/end-to-end-nodejs.git
+
+cd end-to-end-nodejs/micro-services/sdk
+
+yarn or npm install
+```
+
+#### Usage
+1. Compile typescript code: (`yarn build`);
+2. Run the script with the desired options:
+
+```
+yarn compile
+node .\dist\crypto\main.js
 ```
