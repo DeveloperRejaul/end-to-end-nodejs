@@ -1,32 +1,13 @@
-import * as crypto  from 'node:crypto'
+import CryptoJS  from 'crypto-js'
+import crypto from 'node:crypto'
 import * as prompt from '@inquirer/prompts';
 
 
 class Crypto {
     private secret:string="hello_world";
-    private privateKey:crypto.KeyObject;
-    private publicKey:crypto.KeyObject;
-    private algorithm:string = 'aes-192-cbc';
-    private key: Buffer;
-    private iv: Uint8Array;
-
-
     constructor () {
-        const { privateKey, publicKey } = crypto.generateKeyPairSync('x25519', {
-            namedCurve:"sect239k1",
-        });
-
-        const key = crypto.scryptSync(this.secret, "salt", 24);
-        const iv = crypto.randomFillSync(new Uint8Array(16));
-
-        this.publicKey = publicKey;
-        this.privateKey = privateKey;
-        this.key = key;
-        this.iv = iv;
-
-        this.init()
+      this.init()
     }
-
 
     async init () {
         const answer = await prompt.select({
@@ -102,43 +83,25 @@ class Crypto {
     } 
 
     private makeHash (data: string):string{
-       return crypto.createHmac("sha256", this.secret).update(data).digest("hex")
+     return crypto.createHash("sha256").update(data).digest("hex")
     };
 
-    private makeSign (data:string):string {
-        const sign = crypto.createSign('SHA256');
-        sign.write(data);
-        sign.end();
-        return sign.sign(this.privateKey, 'hex');
+    private makeSign (data:string) {
+      const signature = CryptoJS.HmacSHA256(data, this.secret).toString(CryptoJS.enc.Hex);
+      return signature;
     } 
 
-    private makeVerify (data:string, signature:string):boolean {
-        const verify = crypto.createVerify('SHA256');
-        verify.write(data);
-        verify.end();
-        return verify.verify(this.publicKey, signature, 'hex')
+    private makeVerify (data:string, signature:string) {
+      const calculatedSignature = this.makeSign(data);
+      return signature === calculatedSignature;
     }
 
-    private makeEncrypt (data:string):string {
-       let encrypted:string='';
-       const cipher = crypto.createCipheriv(this.algorithm, this.key, this.iv);
-       cipher.setEncoding("hex").on("data",chunk=> encrypted += chunk).write(data);
-       cipher.end();
-       return encrypted;
+    private makeEncrypt (data:string) {
+      return CryptoJS.AES.encrypt(data, this.secret).toString();
     }
 
     private makeDecrypt (encrypted:string) {
-        let decrypted:string = '';
-        const decipher = crypto.createDecipheriv(this.algorithm, this.key, this.iv);
-        decipher.on('readable', () => {
-            let chunk;
-            while (null !== (chunk = decipher.read())) {
-              decrypted += chunk.toString('utf8');
-            }
-        });
-        decipher.write(encrypted, 'hex');
-        decipher.end();
-        return decrypted
+      return CryptoJS.AES.decrypt(encrypted, this.secret).toString(CryptoJS.enc.Utf8);
     }
 }
 
