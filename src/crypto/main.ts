@@ -1,6 +1,5 @@
 import crypto from 'node:crypto'
 
-
 // general hash 
 const secret = 'abc'
 const data ='hello world'
