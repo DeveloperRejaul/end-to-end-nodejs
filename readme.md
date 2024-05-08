@@ -10,7 +10,7 @@ Welcome to the "end-to-end-nodejs" repository! This repository contains a collec
 |04|[Ticket Management Project (Node Event)](#ticket-management-project)| [Link](https://github.com/DeveloperRejaul/end-to-end-nodejs/tree/main/src/event)| [Link](https://google.com)|
 |05|[Rabbitmq Microservices Project (amqplib)](#rabbitmq-microservices-project)| [Link](https://github.com/DeveloperRejaul/end-to-end-nodejs/tree/main/src/rabbitMQ)| [Link](https://google.com)|
 |06|[Microservice SDK for API Communication](#microservice-sdk-for-api-communication)| [Link](https://github.com/DeveloperRejaul/end-to-end-nodejs/tree/main/micro-services/sdk)| [Link](https://google.com)|
-|07|[Crypto Module Project](#crypto-module-project)| [Link](https://github.com/DeveloperRejaul/end-to-end-nodejs/tree/main/crypto)| [Link](https://google.com)|
+|07|[Crypto Module Project](#crypto-module-project)| [Link](https://github.com/DeveloperRejaul/end-to-end-nodejs/tree/main/crypto)| [Link](https://youtu.be/SWTbGgZjKQA)|
 
 
 

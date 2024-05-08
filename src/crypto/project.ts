@@ -5,6 +5,10 @@ import * as prompt from '@inquirer/prompts';
 
 class Crypto {
     private secret:string="hello_world";
+    private algorithm = 'aes-192-cbc';
+    private key = crypto.scryptSync(this.secret, 'salt', 24);
+    private iv = Buffer.alloc(16, 0);
+
     constructor () {
       this.init()
     }
@@ -87,21 +91,33 @@ class Crypto {
     };
 
     private makeSign (data:string) {
-      const signature = CryptoJS.HmacSHA256(data, this.secret).toString(CryptoJS.enc.Hex);
-      return signature;
+     return this.makeEncrypt(data)
     } 
 
     private makeVerify (data:string, signature:string) {
-      const calculatedSignature = this.makeSign(data);
-      return signature === calculatedSignature;
+     return this.makeEncrypt(data) === signature
     }
 
     private makeEncrypt (data:string) {
-      return CryptoJS.AES.encrypt(data, this.secret).toString();
+      const cipher = crypto.createCipheriv(this.algorithm, this.key,this.iv);
+      let encrypted = cipher.update(data, 'utf8', 'hex');
+      encrypted += cipher.final('hex');
+      return encrypted
     }
 
     private makeDecrypt (encrypted:string) {
-      return CryptoJS.AES.decrypt(encrypted, this.secret).toString(CryptoJS.enc.Utf8);
+      const decipher = crypto.createDecipheriv(this.algorithm, this.key,this.iv);
+
+      let decrypted = '';
+      decipher.on('readable', () => {
+        let chunk;
+        while (null !== (chunk = decipher.read())) {
+          decrypted += chunk.toString('utf8');
+        }
+      });
+      decipher.write(encrypted, 'hex');
+      decipher.end();
+      return decrypted;
     }
 }
 
