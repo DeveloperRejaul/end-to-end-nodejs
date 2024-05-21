@@ -4,7 +4,9 @@
  * 02. node supports mjs in cjs
  * 03. node supports ws
  * 04.  glob and globSync add in fs
+ * 05. node --env-file=.env --env-file=.development.env app.js
  */
+
 
 const {name} = require("./esm.mjs");
 console.log(name);
